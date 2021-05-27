@@ -24,8 +24,7 @@ set_property(
 )
 
 target_include_directories(
-    headeronly_headeronly
-    ${headeronly_warning_guard}
+    headeronly_headeronly ${headeronly_warning_guard}
     INTERFACE
     "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
 )
@@ -50,4 +49,14 @@ endif()
 include(CTest)
 if(BUILD_TESTING)
   add_subdirectory(test)
+endif()
+
+option(BUILD_DOCUMENTATION "Build documentation using Doxygen and m.css" OFF)
+if(BUILD_DOCUMENTATION)
+  include(cmake/docs.cmake)
+endif()
+
+option(ENABLE_COVERAGE "Enable coverage support separate from CTest's" OFF)
+if(ENABLE_COVERAGE)
+  include(cmake/coverage.cmake)
 endif()

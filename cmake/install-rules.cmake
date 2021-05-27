@@ -6,7 +6,7 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 install(
-    DIRECTORY "${PROJECT_SOURCE_DIR}/include/"
+    DIRECTORY include/
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
     COMPONENT headeronly_Development
 )
@@ -23,16 +23,16 @@ write_basic_package_version_file(
     ARCH_INDEPENDENT
 )
 
+# Allow package maintainers to freely override the path for the configs
 set(
     headeronly_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/headeronly"
     CACHE STRING "CMake package config location relative to the install prefix"
 )
-
 mark_as_advanced(headeronly_INSTALL_CMAKEDIR)
 
 install(
     FILES
-    "${PROJECT_SOURCE_DIR}/cmake/headeronlyConfig.cmake"
+    cmake/headeronlyConfig.cmake
     "${PROJECT_BINARY_DIR}/headeronlyConfigVersion.cmake"
     DESTINATION "${headeronly_INSTALL_CMAKEDIR}"
     COMPONENT headeronly_Development

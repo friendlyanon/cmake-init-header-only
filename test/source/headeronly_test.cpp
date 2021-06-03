@@ -1,6 +1,7 @@
 #include <headeronly/headeronly.h>
 
-int main() {
+auto main() -> int
+{
   auto result = name();
   return result == "headeronly" ? 0 : 1;
 }

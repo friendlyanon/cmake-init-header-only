@@ -1,4 +1,4 @@
-#include <headeronly/headeronly.h>
+#include <headeronly/headeronly.hpp>
 
 auto main() -> int
 {

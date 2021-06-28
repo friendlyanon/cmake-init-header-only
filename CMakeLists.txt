@@ -7,7 +7,7 @@ project(
     VERSION 0.1.0
     DESCRIPTION "Short description"
     HOMEPAGE_URL "https://example.com/"
-    LANGUAGES CXX
+    LANGUAGES NONE
 )
 
 include(cmake/project-is-top-level.cmake)
@@ -51,8 +51,8 @@ if(BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
-option(BUILD_DOCUMENTATION "Build documentation using Doxygen and m.css" OFF)
-if(BUILD_DOCUMENTATION)
+option(BUILD_MCSS_DOCS "Build documentation using Doxygen and m.css" OFF)
+if(BUILD_MCSS_DOCS)
   include(cmake/docs.cmake)
 endif()
 

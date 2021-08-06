@@ -33,7 +33,9 @@ target_compile_features(headeronly_headeronly INTERFACE cxx_std_17)
 
 # ---- Install rules ----
 
-include(cmake/install-rules.cmake)
+if(NOT CMAKE_SKIP_INSTALL_RULES)
+  include(cmake/install-rules.cmake)
+endif()
 
 # ---- Developer mode ----
 
@@ -46,20 +48,4 @@ elseif(NOT PROJECT_IS_TOP_LEVEL)
   )
 endif()
 
-include(CTest)
-if(BUILD_TESTING)
-  add_subdirectory(test)
-endif()
-
-option(BUILD_MCSS_DOCS "Build documentation using Doxygen and m.css" OFF)
-if(BUILD_MCSS_DOCS)
-  include(cmake/docs.cmake)
-endif()
-
-option(ENABLE_COVERAGE "Enable coverage support separate from CTest's" OFF)
-if(ENABLE_COVERAGE)
-  include(cmake/coverage.cmake)
-endif()
-
-include(cmake/lint-targets.cmake)
-include(cmake/spell-targets.cmake)
+include(cmake/dev-mode.cmake)

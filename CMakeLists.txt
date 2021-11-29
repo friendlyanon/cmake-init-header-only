@@ -26,7 +26,7 @@ set_property(
 )
 
 target_include_directories(
-    headeronly_headeronly ${headeronly_warning_guard}
+    headeronly_headeronly ${warning_guard}
     INTERFACE
     "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
 )

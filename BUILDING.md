@@ -44,4 +44,24 @@ multi-configuration generator, like the Visual Studio ones:
 cmake --install build --config Release
 ```
 
+### CMake package
+
+This project exports a CMake package to be used with the [`find_package`][2]
+command of CMake:
+
+* Package name: `headeronly`
+* Target name: `headeronly::headeronly
+
+Example usage:
+
+```cmake
+find_package(headeronly REQUIRED)
+# Declare the imported target as a build requirement using PRIVATE
+target_link_libraries(
+    project_target PRIVATE
+    headeronly::headeronly
+)
+```
+
 [1]: https://cmake.org/cmake/help/latest/manual/cmake.1.html#install-a-project
+[2]: https://cmake.org/cmake/help/latest/command/find_package.html

@@ -50,13 +50,14 @@ This project exports a CMake package to be used with the [`find_package`][2]
 command of CMake:
 
 * Package name: `headeronly`
-* Target name: `headeronly::headeronly
+* Target name: `headeronly::headeronly`
 
 Example usage:
 
 ```cmake
 find_package(headeronly REQUIRED)
-# Declare the imported target as a build requirement using PRIVATE
+# Declare the imported target as a build requirement using PRIVATE, where
+# project_target is a target created in the consuming project
 target_link_libraries(
     project_target PRIVATE
     headeronly::headeronly

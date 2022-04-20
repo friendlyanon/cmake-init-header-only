@@ -2,6 +2,7 @@
 
 auto main() -> int
 {
-  auto result = name();
+  auto const result = name();
+
   return result == "headeronly" ? 0 : 1;
 }

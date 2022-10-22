@@ -1,5 +1,8 @@
 if(PROJECT_IS_TOP_LEVEL)
-  set(CMAKE_INSTALL_INCLUDEDIR include/headeronly CACHE PATH "")
+  set(
+      CMAKE_INSTALL_INCLUDEDIR "include/headeronly-${PROJECT_VERSION}"
+      CACHE PATH ""
+  )
 endif()
 
 # Project is configured with no languages, so tell GNUInstallDirs the lib dir

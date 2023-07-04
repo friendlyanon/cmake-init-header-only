@@ -4,7 +4,6 @@ project(headeronlyTests LANGUAGES CXX)
 
 include(../cmake/project-is-top-level.cmake)
 include(../cmake/folders.cmake)
-include(../cmake/windows-set-path.cmake)
 
 # ---- Dependencies ----
 

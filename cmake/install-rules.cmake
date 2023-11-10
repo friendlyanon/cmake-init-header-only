@@ -1,8 +1,9 @@
 if(PROJECT_IS_TOP_LEVEL)
   set(
       CMAKE_INSTALL_INCLUDEDIR "include/headeronly-${PROJECT_VERSION}"
-      CACHE PATH ""
+      CACHE STRING ""
   )
+  set_property(CACHE CMAKE_INSTALL_INCLUDEDIR PROPERTY TYPE PATH)
 endif()
 
 # Project is configured with no languages, so tell GNUInstallDirs the lib dir
@@ -35,8 +36,9 @@ write_basic_package_version_file(
 # Allow package maintainers to freely override the path for the configs
 set(
     headeronly_INSTALL_CMAKEDIR "${CMAKE_INSTALL_DATADIR}/${package}"
-    CACHE PATH "CMake package config location relative to the install prefix"
+    CACHE STRING "CMake package config location relative to the install prefix"
 )
+set_property(CACHE headeronly_INSTALL_CMAKEDIR PROPERTY TYPE PATH)
 mark_as_advanced(headeronly_INSTALL_CMAKEDIR)
 
 install(

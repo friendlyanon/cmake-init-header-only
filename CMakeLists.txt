@@ -26,7 +26,7 @@ set_property(
 target_include_directories(
     headeronly_headeronly ${warning_guard}
     INTERFACE
-    "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
+    "\$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>"
 )
 
 target_compile_features(headeronly_headeronly INTERFACE cxx_std_17)
